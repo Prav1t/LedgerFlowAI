@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  LedgerFlow theme — "Precision Ledger"
+  Cool graphite surfaces with a single indigo action color and
+  paired financial semantics: debits render slate-blue, credits render green.
+  Inspired by Linear / Mercury density: tight radii, hairline borders, mono numerals.
+*/
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 224 30% 12%;
+    --surface: 0 0% 100%;
+    --surface-raised: 220 20% 99%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 30% 12%;
+    --primary: 235 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 16% 94%;
+    --secondary-foreground: 224 24% 20%;
+    --muted: 220 16% 94%;
+    --muted-foreground: 223 12% 44%;
+    --accent: 220 16% 92%;
+    --accent-foreground: 224 24% 16%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 60% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 30 60% 12%;
+    --ledger-debit: 224 40% 46%;
+    --ledger-credit: 152 55% 34%;
+    --border: 220 14% 89%;
+    --input: 220 14% 89%;
+    --ring: 235 70% 55%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 226 22% 8%;
+    --foreground: 220 18% 92%;
+    --surface: 226 20% 10%;
+    --surface-raised: 226 18% 13%;
+    --card: 226 20% 10%;
+    --card-foreground: 220 18% 92%;
+    --popover: 226 20% 11%;
+    --popover-foreground: 220 18% 92%;
+    --primary: 235 80% 66%;
+    --primary-foreground: 226 30% 10%;
+    --secondary: 226 16% 16%;
+    --secondary-foreground: 220 16% 86%;
+    --muted: 226 16% 16%;
+    --muted-foreground: 222 10% 58%;
+    --accent: 226 16% 18%;
+    --accent-foreground: 220 16% 90%;
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 152 55% 44%;
+    --success-foreground: 150 40% 8%;
+    --warning: 38 90% 56%;
+    --warning-foreground: 30 60% 10%;
+    --ledger-debit: 224 60% 68%;
+    --ledger-credit: 152 50% 52%;
+    --border: 226 14% 18%;
+    --input: 226 14% 18%;
+    --ring: 235 80% 66%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "tnum" 1, "cv02" 1; /* tabular numerals everywhere: this is a ledger */
+  }
+
+  ::selection {
+    @apply bg-primary/20;
+  }
+}
+
+@layer utilities {
+  .amount {
+    @apply font-mono tabular-nums;
+  }
+}

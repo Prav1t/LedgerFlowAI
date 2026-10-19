@@ -1,0 +1,10 @@
+# Railway service: the BullMQ worker (OCR, extraction, posting, automations,
+# webhook delivery). Web deploys to Vercel; this runs everything async.
+[build]
+builder = "NIXPACKS"
+buildCommand = "npm ci && npx prisma generate"
+
+[deploy]
+startCommand = "npm run worker"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
