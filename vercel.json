@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "prisma generate && next build",
+  "functions": {
+    "src/app/api/v1/copilot/chats/[id]/messages/route.ts": { "maxDuration": 120 },
+    "src/app/api/v1/documents/[id]/approve/route.ts": { "maxDuration": 60 }
+  }
+}
